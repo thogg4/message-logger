@@ -1,0 +1,12 @@
+<div class='photos'>
+
+  <% @photos.each do |photo| %>
+    <div class='brick'>
+      <img src='<%= photo['url'] %>' />
+      <div class='top-round'></div>
+    </div>
+  <% end %>
+
+</div>
+
+

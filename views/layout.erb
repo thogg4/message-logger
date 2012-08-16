@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Photo Publish</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+
+    <script type="text/javascript" charset="utf-8" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/images-loaded.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/masonry.js"></script>
+    <script type="text/javascript" charset="utf-8" src="javascripts/app.js"></script>
+  </head>
+  <body>
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a href="/" class='brand'>Photo Publish</a>
+          <ul class='nav'>
+            <% if session[:client] %>
+              <li><a href="/thogg4">My Photos</a></li>
+          </ul>
+          <ul class='nav pull-right'>
+              <li><a href="/log/out">Logout</a></li>
+            <% else %>
+              <li><a href="/log/in">Login</a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class='row'>
+        <div class='span12'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
