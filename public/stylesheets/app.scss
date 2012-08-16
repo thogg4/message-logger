@@ -16,3 +16,20 @@ body {
     }
   }
 }
+
+.loading {
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  left: 39.5%;
+  top: 100px;
+  height: 160px;
+  width: 200px;
+  padding: 10px;
+  background: black;
+  opacity: 0.9;
+  color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
