@@ -2,9 +2,6 @@ require 'sinatra'
 require 'sass'
 require 'coffee_script'
 
-# set up logging
-require 'logger'
-
 # set up db
 require 'mongoid'
 Dir.glob('./models/*.rb').each {|file| require_relative file }

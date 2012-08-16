@@ -4,4 +4,4 @@ gem 'sinatra'
 gem 'sass'
 gem 'coffee-script'
 
-gem 'logger'
+gem 'mongoid'
