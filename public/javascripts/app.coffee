@@ -1,8 +1,6 @@
 $ ->
   $('.photos').imagesLoaded ->
     $('.loading').hide()
-    $('.photos').masonry
-      itemSelector: '.brick'
 
 
 

@@ -4,9 +4,20 @@ body {
 
 
 .photos {
+
+  -moz-column-count: 3;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 10px;
+  column-count: 3;
+  column-gap: 10px;
+
   .brick {
-    width: 280px;
-    margin: 10px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+
+    margin-bottom: 10px;
 
     .top-round {
       height: 3px;
