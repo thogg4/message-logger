@@ -11,12 +11,16 @@ require 'mongoid'
 Dir.glob('./models/*.rb').each {|file| require_relative file }
 configure do
   Mongoid.configure do |config|
-    name = 'photo_publish'
-    host = 'localhost'
-    config.master = Mongo::Connection.new.db(name)
-    config.persist_in_safe_mode = false
+    if ENV['MONGOHQ_URL']
+      conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
+      uri = URI.parse(ENV['MONGOHQ_URL'])
+      config.master = conn.db(uri.path.gsub(/^\//, ''))
+    else
+      config.master = Mongo::Connection.from_uri("mongodb://localhost:27017").db('photo_publish')
+    end
   end
 end
+
 
 require './lib/dropbox_sdk.rb'
 
