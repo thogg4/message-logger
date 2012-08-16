@@ -4,7 +4,6 @@ require 'coffee_script'
 
 # set up logging
 require 'logger'
-s_logger = Logger.new('./log/sinatra.rb')
 
 # set up db
 require 'mongoid'
