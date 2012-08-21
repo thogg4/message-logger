@@ -2,45 +2,14 @@ body {
   background-color: #F4F4F4;
 }
 
+.date-list {
+  margin: 20px 0px;
+}
 
-.photos {
-
-  -moz-column-count: 3;
-  -moz-column-gap: 10px;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 10px;
-  column-count: 3;
-  column-gap: 10px;
-
-  .brick {
-    width: 100%;
-    display: inline-block;
-    position: relative;
-
-    margin-bottom: 10px;
-
-    .top-round {
-      height: 3px;
-      width: 100px;
-      background-color: #FFFFFF;
-      position: absolute;
-    }
+.panel {
+  .row {
+    padding: 4px 0px;
+    border-bottom: 1px solid #E6E6E6;
   }
 }
 
-.loading {
-  text-align: center;
-  z-index: 100;
-  position: fixed;
-  left: 39.5%;
-  top: 100px;
-  height: 160px;
-  width: 200px;
-  padding: 10px;
-  background: black;
-  opacity: 0.9;
-  color: white;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}

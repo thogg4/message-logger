@@ -1,0 +1,18 @@
+<div class='row'>
+  <h1><%= @date %></h1>
+</div>
+<div class='row panel'>
+  <% @messages.each do |message| %>
+    <div class='row'>
+      <div class='one columns'>
+        <%= message.date.strftime('%H:%M') %>-
+      </div>
+      <div class='seven columns'>
+        <%=auto_link message.message %>
+      </div>
+      <div class='four columns'>
+        <%= message.author %>
+      </div>
+    </div>
+  <% end %>
+</div>
