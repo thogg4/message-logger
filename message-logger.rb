@@ -14,7 +14,7 @@ configure do
       uri = URI.parse(ENV['MONGOHQ_URL'])
       config.master = conn.db(uri.path.gsub(/^\//, ''))
     else
-      config.master = Mongo::Connection.from_uri("mongodb://irc.radiatemedia.com:27017").db('irc-log')
+      config.master = Mongo::Connection.from_uri("mongodb://localhost:27017").db('')
     end
   end
 end
