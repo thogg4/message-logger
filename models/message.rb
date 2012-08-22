@@ -4,5 +4,6 @@ class Message
   field :author
   field :message
   field :date
+  field :important
 
 end
