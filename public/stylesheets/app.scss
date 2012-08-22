@@ -10,6 +10,10 @@ body {
   .row {
     padding: 4px 0px;
     border-bottom: 1px solid #E6E6E6;
+
+    .important {
+      color: #C60F13;
+    }
   }
 }
 

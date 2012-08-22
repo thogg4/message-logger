@@ -1,5 +1,5 @@
 <div class='row'>
-  <h1><%= @date %></h1>
+  <h1>Important</h1>
 </div>
 <div class='row panel'>
   <% @messages.each do |message| %>
@@ -7,18 +7,11 @@
       <div class='one columns'>
         <%= message.date.strftime('%H:%M') %>-
       </div>
-      <div class='six columns'>
+      <div class='seven columns'>
         <%=auto_link message.message %>
       </div>
       <div class='four columns'>
         <%= message.author %>
-      </div>
-      <div class='one columns'>
-        <% if message.important %>
-          <div class='important'>
-            !
-          </div>
-        <% end %>
       </div>
     </div>
   <% end %>

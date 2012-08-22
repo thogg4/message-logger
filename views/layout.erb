@@ -14,7 +14,9 @@
     <div class='row'>
       <div class='two columns date-list'>
         <% all_dates.each do |date| %>
-          <a class='button radius alert' href='<%= date %>'><%= date %></a>
+          <div class='row'>
+            <a class='button radius alert' href='<%= date %>'><%= date %></a>
+          </div>
         <% end %>
       </div>
       <div class='ten columns'>

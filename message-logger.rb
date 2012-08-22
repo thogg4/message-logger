@@ -31,6 +31,11 @@ get '/:date' do |date|
   erb :date
 end
 
+get '/import/ant' do
+  @messages = get_important_messages
+  erb :important
+end
+
 
 # any asset routes
 get '/stylesheets/:name.css' do |n|
@@ -48,4 +53,6 @@ def all_dates
   Message.all.map { |m| m.date.strftime('%Y-%m-%e') }.uniq!
 end
 
-
+def get_important_messages
+  Message.all.select { |m| m.important == true }
+end
