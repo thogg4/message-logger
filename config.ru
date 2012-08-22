@@ -1,2 +1,2 @@
-require './photo_publish.rb'
+require './irc-logger.rb'
 run Sinatra::Application
