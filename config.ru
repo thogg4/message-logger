@@ -1,2 +1,2 @@
-require './irc-logger.rb'
+require './message-logger.rb'
 run Sinatra::Application

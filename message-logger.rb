@@ -3,7 +3,6 @@ require 'sass'
 require 'coffee_script'
 require 'time'
 require './lib/auto_link.rb'
-require './lib/irc_date.rb'
 
 # set up db
 require 'mongoid'
