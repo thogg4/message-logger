@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sass'
 require 'coffee_script'
 require 'time'
+require 'json'
 require './lib/auto_link.rb'
 
 # set up db
@@ -14,14 +15,14 @@ configure do
       uri = URI.parse(ENV['MONGOHQ_URL'])
       config.master = conn.db(uri.path.gsub(/^\//, ''))
     else
-      config.master = Mongo::Connection.from_uri("mongodb://localhost:27017").db('')
+      config.master = Mongo::Connection.from_uri("mongodb://irc.radiatemedia.com:27017").db('message-log')
     end
   end
 end
 
 
 get '/' do
-  today = Time.now.utc.strftime('%Y-%m-%e').to_s
+  today = Time.now.utc.strftime('%Y-%m-%d').to_s
   redirect to("/#{today}")
 end
 
@@ -36,6 +37,10 @@ get '/import/ant' do
   erb :important
 end
 
+get '/get/json/messages' do
+  content_type :json
+  Message.all.to_a.to_json
+end
 
 # any asset routes
 get '/stylesheets/:name.css' do |n|
@@ -46,11 +51,11 @@ get '/javascripts/app.js' do
 end
 
 def get_messages_by_date(date)
-  Message.all.select { |m| m.date.strftime('%Y-%m-%e') == date }
+  Message.all.select { |m| m.date.strftime('%Y-%m-%d') == date }
 end
 
 def all_dates
-  Message.all.map { |m| m.date.strftime('%Y-%m-%e') }.uniq!
+  Message.all.map { |m| m.date.strftime('%Y-%m-%d') }.uniq!
 end
 
 def get_important_messages
