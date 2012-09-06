@@ -7,14 +7,25 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
 
     <script type="text/javascript" charset="utf-8" src="/javascripts/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/javascripts/moment.js"></script>
     <script type="text/javascript" charset="utf-8" src="/javascripts/app.js"></script>
   </head>
   <body>
+    <div class='row search-boxes'>
+      <div class='six columns hide'>
+        <input type="text" placeholder='Filter Messages' class='filter-messages' />
+      </div>
+      <div class='six columns hide'>
+        <input type="text" placeholder='Filter Author' />
+      </div>
+    </div>
     <div class='row'>
       <div class='two columns date-list'>
+
         <div class='row'>
           <a class='button radius alert' href="/import/ant">Important</a>
+        </div>
+        <div class='row'>
+          <a class='button radius alert' href="/">Today</a>
         </div>
         <% all_dates.each do |date| %>
           <div class='row'>
